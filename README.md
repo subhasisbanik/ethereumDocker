@@ -86,3 +86,6 @@ cd ~
 12. Copy the web3 deploy and paste it in the geth console and wait for it to be mined.
 
 Congratulations, you have succssfully set up a private chain Ethereum.
+
+For more details in Ethereum,
+http://www.ethdocs.org/en/latest/ethereum-clients/cpp-ethereum/index.html#quick-start
