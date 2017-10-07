@@ -6,15 +6,15 @@ The steps below will take to through the setup of single node to web3 deploy.
 2. Make the Docker image:
 
 ```
-cd ethereumDocker<br>
-docker build -t {image-name} .<br>
+cd ethereumDocker
+docker build -t {image-name} .
 
 ```
 3. Run the Docker image as a container:
 
 ```
 
-docker run -d -i -p {docker-rpc-port}:{host-rpc-port} {image-name}<br>
+docker run -d -i -p {docker-rpc-port}:{host-rpc-port} {image-name}
 
 ```
 
@@ -22,7 +22,7 @@ docker run -d -i -p {docker-rpc-port}:{host-rpc-port} {image-name}<br>
 
 ```
 
-docker exec -it <container-id/container-name> /bin/bash<br>
+docker exec -it <container-id/container-name> /bin/bash
 
 ```
 
@@ -30,23 +30,23 @@ docker exec -it <container-id/container-name> /bin/bash<br>
 
 ```
 
-cd /root<br>
-mkdir testnet<br>
-cd testnet<br>
-mkdir datadir<br>
-cd datadir<br>
-mkdir keystore<br>
-cd ~<br>
+cd /root
+mkdir testnet
+cd testnet
+mkdir datadir
+cd datadir
+mkdir keystore
+cd ~
 
 ```
 6. Now make a new geth account with any password or empty and correspondingly update the password.txt that will be made:
 
 ```
 
-geth --datadir "/root/testnet/datadir" account new<br>
-cd testnet <br>
-touch password.txt<br>
-cd ~<br>
+geth --datadir "/root/testnet/datadir" account new
+cd testnet
+touch password.txt
+cd ~
 
 ```
 
@@ -57,8 +57,8 @@ cd ~<br>
 7. Now run puppeth to prepare the genesis.json for your private chain setup:
 
     ```
-    cd testnet<br>
-    puppeth<br>
+    cd testnet
+    puppeth
     ```
 
     Please follow the steps by selecting the options in the interactive shell:
@@ -84,7 +84,7 @@ cd ~<br>
    
    ```
    
-   geth --datadir "/root/testnet/datadir" init genesis.json<br>
+   geth --datadir "/root/testnet/datadir" init genesis.json
 
    ```
 
@@ -92,7 +92,7 @@ cd ~<br>
    
    ```
    
-   nohup geth --datadir "/root/testnet/datadir" --networkid {previously-entered-networkid-puppeth} --port {portid} --identity {any-identifiable-name} --verbosity 3 --rpc --rpcapi "eth,web3,net,admin,miner,personal" --rpcport {rpc-port-docker} --rpcaddr "0.0.0.0" --rpccorsdomain "*" --mine --minerthreads 2 --unlock 0 --password "/root/testnet/password.txt" console &<br>
+   nohup geth --datadir "/root/testnet/datadir" --networkid {previously-entered-networkid-puppeth} --port {portid} --identity {any-identifiable-name} --verbosity 3 --rpc --rpcapi "eth,web3,net,admin,miner,personal" --rpcport {rpc-port-docker} --rpcaddr "0.0.0.0" --rpccorsdomain "*" --mine --minerthreads 2 --unlock 0 --password "/root/testnet/password.txt" console &
 
    ```
 
@@ -101,7 +101,7 @@ cd ~<br>
 10. Now enter the geth console with rpc:<br>
    ```
    
-   geth attach rpc:http://127.0.0.1:8545<br>
+   geth attach rpc:http://127.0.0.1:8545
 
 
 ```
