@@ -60,7 +60,7 @@ cd ~<br>
     geth --datadir "/root/testnet/datadir" init genesis.json<br>
 
 9. Now we need to run geth as a background process:
-    nohup geth --datadir "/root/testnet/datadir" --networkid {previously-entered-networkid-puppeth} --port <portid> --identity {any-identifiable-name} --verbosity 3 --rpc --rpcapi "eth,web3,net,admin,miner,personal" --rpcport {rpc-port-docker} --rpcaddr "0.0.0.0" --rpccorsdomain * --mine --minerthreads 2 --unlock 0 --password "/root/testnet/password.txt" console &<br>
+    nohup geth --datadir "/root/testnet/datadir" --networkid {previously-entered-networkid-puppeth} --port {portid} --identity {any-identifiable-name} --verbosity 3 --rpc --rpcapi "eth,web3,net,admin,miner,personal" --rpcport {rpc-port-docker} --rpcaddr "0.0.0.0" --rpccorsdomain "*" --mine --minerthreads 2 --unlock 0 --password "/root/testnet/password.txt" console &<br>
 
     Here we need to replace the values with '{}' with valid data.
 
