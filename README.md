@@ -3,6 +3,11 @@ The steps below will take to through the setup of single node to web3 deploy.
 
 1. Clone the project into your machine:
 
+```
+https://github.com/subhasisbanik/ethereumDocker.git
+
+```
+
 2. Make the Docker image:
 
 ```
