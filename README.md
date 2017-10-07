@@ -4,9 +4,11 @@ The steps below will take to through the setup of single node to web3 deploy.
 1. Clone the project into your machine:
 
 2. Make the Docker image:
+```
 cd ethereumDocker<br>
 docker build -t {image-name} .<br>
 
+```
 3. Run the Docker image as a container:
 docker run -d -i -p {docker-rpc-port}:{host-rpc-port} {image-name}<br>
 
